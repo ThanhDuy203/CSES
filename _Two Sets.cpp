@@ -1,22 +1,31 @@
 //TwoSets
 #include <bits/stdc++.h>
 #include <vector>
-#define inp(arr); for (int i = 0; i < n; i++) { cin >> arr[i]; }
-#define oup(arr); for (int i = 0; i < arr.size(); i++) { cout << arr[i] <<" "; }
 using namespace std;
 typedef long long ll;
-int isPrime(int n){
-	for (int i = 2; i * i <= n; ++i){ if (n % i == 0) return 0; }
-	return 1;
-}
 int main(){
 	ll n; cin >> n;
-	while (n--){
-		vector<ll> a, b;
-		bool ktra = false;
-		
+	vector<ll> a, b;
+	ll s = (n + 1) * ((n - 1) + 1) / 2;
+	if (s % 2) {
+		cout <<"NO";
+	} else {
+		cout <<"YES"<<"\n";
+		ll tmp = s / 2;
+		for (ll i = n; i >= 1; i--){
+			if (tmp - i > 0){
+				a.push_back(i);
+				tmp -= i;
+			} else b.push_back(i);
+		}
+		a.push_back(b.back());
+		b.pop_back();
+		//Oup
+		cout << a.size()<<"\n"; 
+		for (auto x : a) cout << x <<" ";
+		cout <<"\n"<< b.size() <<"\n";
+		for (auto x : b) cout << x <<" ";
 	}
-	if (ktra) cout << "YES"<<"\n"; else cout <<"NO";
 	return 0;
 }
 
