@@ -4,7 +4,7 @@
 using namespace std;
 typedef long long ll;
 //Kadena 's Algorithm
-int kadane(vector<ll> temp, int n){
+int kadena(vector<ll> temp, int n){
 	ll sum = 0, res = INT_MIN; 
 	bool kt = false;
 	for (int i = 0; i < n; i++){
