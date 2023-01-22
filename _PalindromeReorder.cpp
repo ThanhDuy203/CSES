@@ -16,7 +16,6 @@ int main(){
 		for (auto x : arr){
 			int count = x.second;
 			if (count % 2 == 0){
-				//thay vi dung for cho string => str(sl, ktu);
 				string str(x.second / 2, x.first); a = str + a;
 			} else {
 				string str(x.second, x.first); b = b + str;
